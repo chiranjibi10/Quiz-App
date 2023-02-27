@@ -89,9 +89,9 @@ import android.widget.TextView;
      void finishQuiz(){
         String passStatus ="";
         if(score > totalQuestion*0.60){
-            passStatus ="PASSED";
+            passStatus ="CONGRATULATION YOU GOT PASSED";
         }else {
-            passStatus = "FAILED";
+            passStatus = "OOPS,YOU FAILED";
         }
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
