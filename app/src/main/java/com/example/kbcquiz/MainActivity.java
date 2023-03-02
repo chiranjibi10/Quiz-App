@@ -13,8 +13,10 @@ import android.widget.TextView;
 
     TextView totalQuestionsTextview;
     TextView questionsTextview;
+
     Button ansA,ansB,ansC,ansD;
     Button submitBtn;
+
 
     int score=0;
     int totalQuestion = QuestionAnswer.question.length;
@@ -34,7 +36,6 @@ import android.widget.TextView;
         ansC = findViewById(R.id.ans_C);
         ansD = findViewById(R.id.ans_D);
         submitBtn = findViewById(R.id.submit_btn);
-
 
         ansA.setOnClickListener(this);
         ansB.setOnClickListener(this);
@@ -59,6 +60,7 @@ import android.widget.TextView;
         ansC.setBackgroundColor(Color.WHITE);
         ansD.setBackgroundColor(Color.WHITE);
 
+
         Button clickedButton = (Button) view;
         if(clickedButton.getId()==R.id.submit_btn){
             if(selectedAnswer.equals(QuestionAnswer.correctAnswer[currentQuestionIndex])){
@@ -72,6 +74,7 @@ import android.widget.TextView;
             selectedAnswer =clickedButton.getText().toString();
             clickedButton.setBackgroundColor(Color.MAGENTA);
         }
+
 
      }
      void loadNewQuestion(){
@@ -91,7 +94,7 @@ import android.widget.TextView;
         if(score > totalQuestion*0.60){
             passStatus ="CONGRATULATION YOU GOT PASSED";
         }else {
-            passStatus = "OOPS,YOU FAILED";
+            passStatus = "OOPS,YOU GOT FAILED";
         }
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
